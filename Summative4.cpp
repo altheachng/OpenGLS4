@@ -654,7 +654,6 @@ void specialKeys(int key, int x, int y) {
 void init() {
     glClearColor(0.02f, 0.02f, 0.15f, 1.0f);
 
-    // Ensure modern GL function pointers are exposed
     glewExperimental = GL_TRUE;
     GLenum err = glewInit();
     if (err != GLEW_OK) {
@@ -662,7 +661,6 @@ void init() {
         exit(1);
     }
 
-    // Now it's safe to create buffers / call GL functions
     setupVBOData();
 
     lastTime = glutGet(GLUT_ELAPSED_TIME);
